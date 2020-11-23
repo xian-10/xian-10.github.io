@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, xian-10">
+    <meta name="keywords" content="c++用类方法创建没有头节点的链表, xian-10">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | xian-10</title>
+    <title>c++用类方法创建没有头节点的链表 | xian-10</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,7 +313,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">c++用类方法创建没有头节点的链表</h1>
                 </div>
             </div>
         </div>
@@ -442,21 +442,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-22
+                    2020-11-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-22
+                    2020-11-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    568
                 </div>
                 
 
@@ -468,16 +468,139 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="c-使用类创建链表-（方法仅供参考）"><a href="#c-使用类创建链表-（方法仅供参考）" class="headerlink" title="c++使用类创建链表  （方法仅供参考）"></a>c++使用类创建链表  （方法仅供参考）</h2><h4 id="链表的话首先需要有一个关于节点的结构体或者类，在这里用类举例。"><a href="#链表的话首先需要有一个关于节点的结构体或者类，在这里用类举例。" class="headerlink" title="链表的话首先需要有一个关于节点的结构体或者类，在这里用类举例。"></a>链表的话首先需要有一个关于节点的结构体或者类，在这里用类举例。</h4><h5 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下:"></a>代码如下:</h5><pre class=" language-c++"><code class="language-c++">class Plnode
+&#123;
+public:
+    Plnode(); //无参构造函数，默认data为0，指针为空
+    void set(float m); //实例化后设置data
+    void set_Next(Plnode *ZZ); //指针改动
+    Plnode *get_point(); //获得节点指针域
+    float get_data(); //获得数据域
 
+private:
+    float data;
+    Plnode *Next;
+&#125;;</code></pre>
+<h5 id="函数实现-："><a href="#函数实现-：" class="headerlink" title="函数实现 ："></a>函数实现 ：</h5><pre class=" language-c++"><code class="language-c++">Plnode::Plnode() //无参构造函数，默认data为0，指针为空
+    &#123;
+        data = 0;
+        Next = NULL;
+    &#125;
+
+void Plnode::set(float m) //实例化后设置data
+    &#123;
+        data = m;
+    &#125;
+
+void Plnode::set_Next(Plnode *ZZ) //指针改动
+    &#123;
+        Next = ZZ;
+    &#125;
+
+float Plnode::get_data() //获得数据域
+    &#123;
+        return data;
+    &#125;
+
+Plnode * Plnode::get_point() //获得节点指针域
+    &#123;
+        return Next;
+    &#125;</code></pre>
+<h4 id="函数什么的可以自定义，数据最好放在私有变量中。因为在创建链表结点时，首先是在链表末尾节点添加，所以每创建一个新的节点时数据域为零，指针域为空。"><a href="#函数什么的可以自定义，数据最好放在私有变量中。因为在创建链表结点时，首先是在链表末尾节点添加，所以每创建一个新的节点时数据域为零，指针域为空。" class="headerlink" title="函数什么的可以自定义，数据最好放在私有变量中。因为在创建链表结点时，首先是在链表末尾节点添加，所以每创建一个新的节点时数据域为零，指针域为空。"></a>函数什么的可以自定义，数据最好放在私有变量中。因为在创建链表结点时，首先是在链表末尾节点添加，所以每创建一个新的节点时数据域为零，指针域为空。</h4><h4 id="节点类写完后，还需要写一个链表类来作为链表的头指针和链表的基本操作函数。"><a href="#节点类写完后，还需要写一个链表类来作为链表的头指针和链表的基本操作函数。" class="headerlink" title="节点类写完后，还需要写一个链表类来作为链表的头指针和链表的基本操作函数。"></a>节点类写完后，还需要写一个链表类来作为链表的头指针和链表的基本操作函数。</h4><h5 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h5><pre class=" language-c++"><code class="language-c++">class Linklist
+&#123;
+public:
+    Linklist(); //无参构造，默认linklist为空
+
+    Plnode *get_point(); //返回该头指针
+
+    float get_data(int n); //获得链表第n位的数据
+
+    void print_data(); //链表数据输出
+
+    void insert(float m, int n); //链表插入数据
+
+    void sort_data();//排序函数
+
+private:
+    Plnode *linklist;
+&#125;;</code></pre>
+<h5 id="函数实现："><a href="#函数实现：" class="headerlink" title="函数实现："></a>函数实现：</h5><pre class=" language-c++"><code class="language-c++">Linklist::Linklist ()//无参构造，有默认值
+    &#123;
+        linklist = NULL;
+    &#125;
+
+Plnode * Linklist::get_point() //返回该头指针
+    &#123;
+        return linklist;
+    &#125;
+
+float Linklist::get_data(int n) //获得链表第n位的数据
+    &#123;
+        int j = 1;
+        Plnode *L = linklist;
+        while (L && j < n)
+        &#123;
+            L = L->get_point();
+            j++;
+        &#125;
+        if (!L)
+            return 0;
+        return L->get_data();
+    &#125;
+
+void Linklist::print_data() //链表数据输出
+    &#123;
+        Plnode *L = linklist;
+        while (L)
+        &#123;
+            cout << L->get_data() << " ";
+            L = L->get_point();
+        &#125;
+        cout << endl;
+    &#125;
+
+void Linklist::insert(float m, int n) //链表插入数据
+    &#123;
+        int j = 1;
+        Plnode *L = linklist;
+        Plnode *P = new Plnode;
+        P->set(m);
+        if (n == 0)
+        &#123;
+            P->set_Next(linklist);
+            linklist = P;
+        &#125;
+        else
+        &#123;
+            while (L && j < n)
+            &#123;
+                L = L->get_point();
+                j++;
+            &#125;
+            P->set_Next(L->get_point());
+            L->set_Next(P);
+        &#125;
+    &#125;
+
+void Linklist::sort_data()//排序函数
+    &#123;
+        Plnode *x1, *x2, *x3;
+        float t;
+        for (x1 = linklist; x1; x1 = x1->get_point())
+        &#123;
+            x3 = x1;
+            for (x2 = x1->get_point(); x2; x2 = x2->get_point())
+                if (x3->get_data() > x2->get_data())
+                    x3 = x2;
+            if (x3 != x1)
+            &#123;
+                t = x1->get_data();
+                x1->set(x3->get_data());
+                x3->set(t);
+            &#125;
+        &#125;
+    &#125;</code></pre>
+<h4 id="遇到的问题-：创建节点时要使用new方法，才能生成链表后续节点，要不然插入函数完成后内存中节点内存会直接删除掉。"><a href="#遇到的问题-：创建节点时要使用new方法，才能生成链表后续节点，要不然插入函数完成后内存中节点内存会直接删除掉。" class="headerlink" title="遇到的问题 ：创建节点时要使用new方法，才能生成链表后续节点，要不然插入函数完成后内存中节点内存会直接删除掉。"></a>遇到的问题 ：创建节点时要使用new方法，才能生成链表后续节点，要不然插入函数完成后内存中节点内存会直接删除掉。</h4>
             </div>
             <hr/>
 
@@ -502,7 +625,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xian-10.github.io/2020/112216107.html">https://xian-10.github.io/2020/112216107.html</a>
+                    <a href="https://xian-10.github.io/2020/112333066.html">https://xian-10.github.io/2020/112333066.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -705,9 +828,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/112333066.html">
                     <div class="card-image">
@@ -728,9 +852,9 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -739,6 +863,7 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -746,7 +871,7 @@ public:
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/112216107.html">
@@ -776,7 +901,6 @@ public:
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
